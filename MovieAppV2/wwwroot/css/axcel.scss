@@ -1,0 +1,137 @@
+$negro: #111111;
+$blanco: #FEFEFE;
+
+$morado: #9dafff;
+$moradoDark: #0C003D;
+$fondoDark: #06001F;
+$fondoLight: #F8F8F8;
+
+$sombraDark: 10px 10px 20px rgba(170,170,170,.16);
+$sombraLight: 10px 10px 20px rgba(0,0,0,.16);
+
+.switch {
+    background: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    &::after{
+        content: "";
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background: #f1f1f1;
+        top: 0;
+        left: 0;
+        right: unset;
+        border-radius: 100px;
+        transition: .3s ease all;
+        box-shadow: 0px 0px 2px 2px;
+    }
+    &.active {
+      background: orange;
+      color: #000;
+      &::after{
+        top: 0;
+        left: unset;
+        right: 0;
+        transition: .3s ease all;
+      }
+    }
+    span {
+      width: 30px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      display: block;
+      background: none;
+      color: #fff;
+    }
+  }
+
+body{
+  background-image: url(/imagenes/fondoclaro2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  // background
+  transition: .3s ease all;
+  color: $negro;
+  &.dark{
+    background-image: url(/imagenes/fondooscuro2.jpg);
+    // background-position: center;
+    // background-size: cover;
+    // background-position: fixed;
+    transition: .3s ease all;
+    color: white;
+  }
+}
+
+nav{
+  background: $fondoLight;
+  position: sticky;
+  &.dark{
+    background: $moradoDark;
+    transition: .3s ease all;
+    color: $morado;
+  }
+}
+.fondo{
+        background: rgba(255, 255, 255, 0.253);
+        color: black;
+        border-radius: 20px;
+        opacity: 0.9;
+        backdrop-filter: blur(8px);
+        font-weight: 600;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        // position: relative;
+        // height: 100%;
+        // width: 90%;
+        // left: 5%;
+        // top: 10;
+        // bottom: 0;
+        // z-index: -1;
+}
+.dark{
+  .fondo{
+    background: black;
+    color: white;
+  }
+}
+.fondofot{
+        background: white;
+        color: black;
+        // border-radius: 20px;
+        opacity: 0.8;
+        backdrop-filter: blur(8px);
+        position: fixed;
+        bottom: 0;
+        // height: 100%;
+        // width: 90%;
+        // left: 5%;
+        // top: 10;
+        // bottom: 0;
+        // z-index: -1;
+}
+.dark{
+  .fondofot{
+    background: black;
+    color: white;
+  }
+}
+// .dark {
+//   nav {
+//     background: $moradoDark;
+//     transition: .3s ease all;
+//     color: $morado;
+//   }
+// }
+.dark {
+  table{
+    color: $blanco;
+  }
+}

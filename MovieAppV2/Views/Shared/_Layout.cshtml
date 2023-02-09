@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - I.E.1190 Huaman Poma</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/axcel.css" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="icon" href="/movie.ico" sizes="16x16">
+    <script src="https://use.fontawesome.com/ebea311352.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar navbar-dark bg-dark border-bottom border-dark box-shadow">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img src="/logoColegio.ico" class="d-inline-block align-top" width="30px" height="30px"> I.E.1190 Huaman Poma</a>
+                <button class="switch p-t-1" id="switch">
+                    <span>☺</span>
+                    <span>☻</span>
+                </button>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <!--<li class="nav-item active">-->
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-controller="Quiz2" asp-action="Preguntas">Quiz2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-controller="Home" asp-action="Privacy">Quienes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-controller="Quiz" asp-action="Trivia">Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-controller="Usuario" asp-action="OpcionesAdmin">OpcionesAdmin</a>
+                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown" role="button" >Películas</a>
+                                <div class="dropdown-menu bg-dark">
+                                    <a class="dropdown-item bg-dark text-light" asp-controller="Pelicula" asp-action="AgregarPelicula">Agregar nueva película</a>
+                                    <a class="dropdown-item bg-dark text-light" asp-controller="Pelicula" asp-action="Catalogo">Catálogo</a>
+                                    <a class="dropdown-item bg-dark text-light" asp-controller="Pelicula" asp-action="MisPeliculas">Mis peliculas</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown" role="button" >Noticia</a>
+                                <div class="dropdown-menu bg-dark">
+                                    <a class="dropdown-item bg-dark text-light" asp-controller="Noticia" asp-action="AgregarNoticia">Agregar Noticia</a>
+                                    <a class="dropdown-item bg-dark text-light" asp-controller="Noticia" asp-action="VerNoticia">Noticias del Canal</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link active bg-dark text-light" asp-controller="usuario" asp-action="logout">Cerrar Sesion (@User.Identity.Name)</a>
+                            </li>
+                        }else
+                        {
+                            <li class="nav-item">
+                                    <a class="nav-link active bg-dark text-light" asp-controller="Pelicula" asp-action="Catalogo">Catálogo</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link active bg-dark text-light" asp-controller="Noticia" asp-action="VerNoticia">Noticias del Canal</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown" role="button" >Usuarios</a>
+                                <div class="dropdown-menu bg-dark">
+                                    <a class="dropdown-item bg-dark text-light" asp-controller="Usuario" asp-action="Login">Login</a>
+                                    <a class="dropdown-item bg-dark text-light" asp-controller="Usuario" asp-action="Registro">Registro</a>
+                                    <a class="dropdown-item bg-dark text-light" asp-controller="Usuario" asp-action="OpcionesAdmin">OpcionesAdmin</a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="fondo">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top p-2 text-muted fondofot" style="width: 100%;">
+        <div class="container">
+            &copy; 2023 - I.E.1190 Huaman Poma - <a asp-area="s" asp-controller="Home" asp-action="Privacy">Quienes Somos</a>
+        </div>
+    </footer>
+    <script src="https://use.fontawesome.com/ebea311352.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

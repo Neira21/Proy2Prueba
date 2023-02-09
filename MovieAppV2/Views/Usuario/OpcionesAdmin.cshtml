@@ -1,0 +1,77 @@
+@model MovieAppV2.Models.Usuario;
+@{
+    ViewBag.title = "OpcionesAdmin";
+}
+
+<div class="row text-center">
+
+    <div class="col-4" style="margin-top: 20px; margin-bottom: 20px;">
+        <img src="/imagenes/logoColegio.png" width="50%" height="auto" alt="login">
+    </div>
+    <div class="col-8">
+        
+        <h1 class="text-center">@ViewBag.title</h1>
+        
+        <div class="row text - center">
+            <form method="POST">
+            <div asp-validation-summary="All"></div>
+            <div class="col-4">
+                <div class="form-group">
+                <input type="button">Registrar nuevo usuario
+                </div>
+            </div>
+             
+            <div class="col-4">
+                <div class="form-group">
+                <input type="button">Registrar nuevo curso
+                </div>
+            </div>
+            </form> 
+        </div>
+
+        <div class="row text - center">
+            <form method="POST">
+            <div asp-validation-summary="All"></div>
+            <div class="col-6">
+                <div class="form-group">
+                <label>Lista general de usuarios</label>
+                <input class="form-control" required id="username" name="username" placeholder="Usuario">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                <label>Ingresar como alumno:</label>
+                <input class="form-control" required id="username" name="username" placeholder="Usuario">
+                </div>
+            </div>
+            </form>
+        </div>
+
+        <div class="row text - center">
+            <form method="POST">
+            <div asp-validation-summary="All"></div>
+            <div class="col-6">
+                <div class="form-group">
+                <label>Ingresar como docente:</label>
+                <input class="form-control" required id="username" name="username" placeholder="Usuario">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                <label>"..."</label>
+                <input class="form-control" required id="username" name="username" placeholder="Usuario">
+                </div>
+            </div>
+            </form>
+        </div>
+
+        <br>
+        <br>
+        <div class="row text-center">
+            <div class="col-4"><a href="#"><img src="/imagenes/facebook.png" alt="facebook" height="30px" width="30px"></a></div>
+            <div class="col-4"><a href="#"><img src="/imagenes/instagram.png" alt="instagram" height="30px" width="30px"></a></div>
+            <div class="col-4"><a href="#"><img src="/imagenes/google.png" alt="google" height="30px" width="30px"></a></div>
+        </div>
+
+    </div> 
+</div>

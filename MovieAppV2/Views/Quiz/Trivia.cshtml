@@ -1,0 +1,67 @@
+@model MovieAppV2.Models.Quiz
+
+<h1>Nuevo Quiz cada semana</h1>
+
+<form asp-action="ResultadoCreate">
+    <div class="row">
+        <aside class="col-5">
+            <div>
+                <label>¿Cómo se llamó la película basada en la vida de Stephen Hawking?</label>
+            </div>
+        </aside>
+        <main class="col-7">
+            <div>        
+                <label><input type="radio" name = "RPg1" value=0 />La teoría del Universo</label>
+            </div>
+            <div>
+                <label><input type="radio" name = "RPg1" value=0 />La teoría del Big Bang</label>
+            </div>   
+            <div>
+                <label><input type="radio" name = "RPg1" value=1 />La teoría del todo</label>
+            </div>
+        </main>
+    </div>
+
+    <div class="row">
+        <aside class="col-5">
+            <div>
+                <label>¿Cuál es el nombre de la película animada acerca del Día de Muertos en México, estrenada en 2017?</label>
+            </div>
+        </aside>  
+        <main class="col-7">
+            <div>        
+                <label><input type="radio" name = "RPg2" value=0 />Día de Muertos</label>
+            </div>
+            <div>
+                <label><input type="radio" name = "RPg2" value=1 />Coco</label>
+            </div>   
+            <div>
+                <label><input type="radio" name = "RPg2" value=0 />El libro de la vida</label>
+            </div>
+        </main>
+    </div>
+
+    <div class="row">
+        <aside class="col-5">
+            <div>
+                <label>¿Quién protagonizó Aquaman en 2018?</label>
+            </div>
+        </aside> 
+        <main class="col-7">
+            <div>        
+                <label><input type="radio" name = "RPg3" value=0 />Randall Park</label>
+            </div>
+            <div>
+                <label><input type="radio" name = "RPg3" value=1 />Jason Momoa</label>
+            </div>   
+            <div>
+                <label><input type="radio" name = "RPg3" value=0 />Robert Downey Jr.</label>
+            </div>
+        </main>
+    </div>
+
+    <input type="submit" value="Comprobar Resultado" class="btn btn-secondary" />
+
+    <h1>@Html.DisplayFor(model => model.Mensaje)</h1>
+
+</form>

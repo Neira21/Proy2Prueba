@@ -1,0 +1,89 @@
+﻿@model MovieAppV2.Models.Usuario;
+@{
+    ViewBag.title = "Registro Usuario";
+}
+
+
+<div class="row text-center">
+
+    <div class="col-3" style="margin-top: 20px; margin-bottom: 20px;">
+        <img src="/imagenes/logoColegio.png" width="50%" height="auto" alt="login">
+    </div>
+      <div class="col-9">
+         <h1 style="text-align: center;">@ViewBag.title</h1>
+    <form method="POST">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label>Primer Nombre:</label>
+            <input class="form-control" id="username" name="username" placeholder="Usuario">
+        </div>
+        <div class="form-group">
+            <label>Segundo Nombre:</label>
+            <input class="form-control" id="NombreDos" name="NombreDos" placeholder="Contraseña">
+        </div>
+        <div class="form-group">
+            <label>Apellido Paterno:</label>
+            <input class="form-control" asp-for="Apellido" placeholder="Apellidos">
+        </div>
+        <div class="form-group">
+            <label>Apellido Materno:</label>
+            <input class="form-control" asp-for="Nombre" placeholder="Nombres">
+        </div> 
+        <div class="form-group">
+            <label>DNI:</label>
+            <input class="form-control" asp-for="Dni" placeholder="Dni">
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-2 col-sm-2 col-md-2"><label>Tipo de Usuario:</label></div>
+                <div class="col-3 col-sm-3 col-md-3"><label><input type="radio" asp-for="Sexo" value="M"> Administrador</label></div>
+                <div class="col-3 col-sm-3 col-md-3"><label><input type="radio" asp-for="Sexo" value="F"> Alumno</label></div>
+                <div class="col-3 col-sm-3 col-md-3"><label><input type="radio" asp-for="Sexo" value="F"> Profesor</label></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Fecha de Nacimiento:</label>
+            <input class="form-control" asp-for="FecNac" placeholder="Fecha de Nacimiento">
+        </div>
+        <div class="form-group">
+            <label>Dirección</label>
+            <input class="form-control" name="Direccion" placeholder="Direccion">
+        </div>
+        <div class="form-group">
+            <label>Correo:</label>
+            <input class="form-control" asp-for="Email" placeholder="Correo Electronico">
+        </div>
+        <div class="form-group">
+            <label>Nro Celular:</label>
+            <input class="form-control" asp-for="Celular" placeholder="Numero Celular">
+        </div>
+        <div class="form-group">
+            <label>Grado:</label>
+            <select asp-for="GenFav" class="form-control">
+                <option>1ro</option>
+                <option>2do</option>
+                <option>3ro</option>
+                <option>4to</option>
+                <option>5to</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Seccion:</label>
+            <select asp-for="GenFav" class="form-control">
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+                <option>D</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Contraseña:</label>
+            <input class="form-control" type="password" id="pwd" name="pwd" placeholder="Contraseña">
+        </div>
+        <div class="text-center">
+            <input type="submit" class="btn btn-primary" value="Registrar nuevo usuario">
+    </form>
+            <input type="submit" class="btn btn-danger" value="Volver" onclick="location.href='@Url.Action("Index","Home")'">
+        </div>
+</div>
+
